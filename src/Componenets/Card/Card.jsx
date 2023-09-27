@@ -2,21 +2,28 @@ import swal from "sweetalert";
 
 const Card = ({ donationCard }) => {
 
-    const { id, cover, description, donate_amount, title,button_bg  } = donationCard || {}
+    const { id, cover, description, donate_amount, title, button_bg } = donationCard || {}
 
     const handelToAddDonation = () => {
         const addTODonationCards = []
         const donationCards = JSON.parse(localStorage.getItem('donation'))
 
-        if(!donationCards){
+        if (!donationCards) {
             addTODonationCards.push(donationCard)
-            localStorage.setItem('donation',JSON.stringify(addTODonationCards))
+            localStorage.setItem('donation', JSON.stringify(addTODonationCards))
             swal("Thank You For Your Donation");
         }
-        else{
-            addTODonationCards.push(... donationCards,donationCard)
-            localStorage.setItem('donation',JSON.stringify(addTODonationCards))
-            swal("Thank You For Your Donation");
+        else {
+
+            const isExist = donationCards.find(donationCard => donationCard.id === id)
+            if (!isExist) {
+                addTODonationCards.push(...donationCards, donationCard)
+                localStorage.setItem('donation', JSON.stringify(addTODonationCards))
+                swal("Thank You For Your Donation");
+            }
+            else {
+                swal("Alerdy Donate This Category")
+            }
         }
     }
     return (

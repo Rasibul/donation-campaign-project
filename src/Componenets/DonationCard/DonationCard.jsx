@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 
 const DonationCard = ({ donationCard }) => {
-    console.log(donationCard)
     const { id, cover, category, category_bg, card_bg, color, title } = donationCard || {}
     return (
         <Link to={`/donationCard/${id}`}>
