@@ -2,7 +2,7 @@ import swal from "sweetalert";
 
 const Card = ({ donationCard }) => {
 
-    const { id, cover, description, donate_amount, title } = donationCard || {}
+    const { id, cover, description, donate_amount, title,button_bg  } = donationCard || {}
 
     const handelToAddDonation = () => {
         const addTODonationCards = []
@@ -25,7 +25,7 @@ const Card = ({ donationCard }) => {
                 <img className="w-full " src={cover} alt="Shoes" />
                 <div className='flex items-end'>
                     <div className='w-full h-[150px] absolute bg-[#0b0b0b80]   '>
-                        <button onClick={handelToAddDonation} className="btn btn-secondary  ml-4 mt-4">Donation ${donate_amount}</button>
+                        <button onClick={handelToAddDonation} className="btn btn-secondary  ml-4 mt-4" style={{ background: button_bg }}>Donation ${donate_amount}</button>
                     </div>
                 </div>
             </div>
