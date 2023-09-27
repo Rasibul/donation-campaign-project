@@ -21,7 +21,7 @@ const Donation = () => {
                 noDonation ? <p className="text-5xl text-center h-screen font-bold">{noDonation}</p>
                     :
                     <div>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div className="grid  md:grid-cols-2 gap-4">
                             {
                                 isShow ? donation.map(card => <DonationsCards key={card.id} card={card}></DonationsCards>) :
                                 donation.slice(0,4).map(card => <DonationsCards key={card.id} card={card}></DonationsCards>)

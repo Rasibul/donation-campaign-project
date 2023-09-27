@@ -2,7 +2,7 @@ const DonationsCards = ({ card }) => {
     const {  cover, category, donate_amount, category_bg, card_bg, color, title, button_bg } = card || {}
     return (
         <div>
-            <div className="card card-side bg-base-100 shadow-xl" style={{ background: card_bg }}>
+            <div className="card card-side bg-base-100 shadow-xl flex-col lg:flex-row" style={{ background: card_bg }}>
 
                 <img src={cover} alt="Movie" />
                 <div className="card-body">

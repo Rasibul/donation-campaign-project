@@ -9,27 +9,28 @@ import Error from "../Pages/ErrorPage/Error";
 
 const creatMyRouter = createBrowserRouter([
     {
-        path:'/',
-        element:<MainLayout></MainLayout>,
-        errorElement:<Error></Error>,
+        path: '/',
+        element: <MainLayout></MainLayout>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
-                element:<Home></Home>,
-                loader: () => fetch ('donationCard.json')
+                element: <Home></Home>,
+                loader: () => fetch('/donationCard.json')
             },
             {
-                path : '/donation',
-                element:<Donation></Donation>
+                path: '/donation',
+                element: <Donation></Donation>
             },
             {
                 path: '/statistis',
-                element:<Statistis></Statistis>
+                element: <Statistis></Statistis>,
+                loader: () => fetch('/donationCard.json')
             },
             {
                 path: '/donationCard/:id',
                 element: <AllDonationCard></AllDonationCard>,
-                loader: () => fetch ('donationCard.json')
+                loader: () => fetch('/donationCard.json')
             }
         ]
     }
