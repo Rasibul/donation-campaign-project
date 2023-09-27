@@ -1,5 +1,3 @@
-
-
 const DonationsCards = ({ card }) => {
     const { id, cover, category, donate_amount, category_bg, card_bg, text_color, title } = card || {}
     return (

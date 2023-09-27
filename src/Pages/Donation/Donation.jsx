@@ -15,7 +15,6 @@ const Donation = () => {
             setEmtyDonation("Donation Amount is 0")
         }
     }, [])
-    console.log(donation)
     return (
         <div>
             {

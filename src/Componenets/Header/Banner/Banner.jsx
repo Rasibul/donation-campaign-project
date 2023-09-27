@@ -8,7 +8,7 @@ const Banner = () => {
                         type="text"
                         name=""
                         id=""
-                        placeholder="Serche here..."
+                        placeholder="Search here..."
                         className=" bordered border-2 py-2 px-3 roundeds-s-lg" />
                         <button type="submit" className="px-3 py-2 text-white bg-[#FF444A] font-semibold">Search</button>
                 </div>
